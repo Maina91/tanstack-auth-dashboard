@@ -1,0 +1,12 @@
+node_modules
+
+.cache
+.env
+
+dist
+/build/
+/api/
+/server/build
+/public/build
+
+.tanstack
