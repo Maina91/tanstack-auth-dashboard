@@ -22,10 +22,13 @@
     "@tailwindcss/vite": "^4.1.11",
     "@tanstack/react-router": "^1.130.9",
     "@tanstack/react-start": "^1.130.9",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.4",
     "lucide-react": "^0.536.0",
+    "postgres": "^3.4.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "sonner": "^2.0.6",
@@ -35,6 +38,8 @@
     "zod": "^4.0.14"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@tanstack/router-vite-plugin": "^1.130.9",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.9",
@@ -42,8 +47,6 @@
     "@vitejs/plugin-react": "^4.7.0",
     "drizzle-kit": "^0.31.4",
     "tailwindcss": "^4.1.11",
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
     "typescript": "5.8",
     "typescript-eslint": "^8.38.0",
     "vite-tsconfig-paths": "^5.1.4"

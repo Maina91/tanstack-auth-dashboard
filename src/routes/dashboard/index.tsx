@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/dashboard/")({
-  component: DashboardIndex,
+  component: Dashboard,
 });
 
-function DashboardIndex() {
+function Dashboard() {
   return (
     <div className="flex flex-col gap-1">
       Dashboard index page

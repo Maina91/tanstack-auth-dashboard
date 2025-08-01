@@ -15,7 +15,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as authRegisterRouteImport } from './routes/(auth)/register'
 import { Route as authLoginRouteImport } from './routes/(auth)/login'
-import { Route as authComponentsRegistrationFormRouteImport } from './routes/(auth)/components/RegistrationForm'
 
 const DashboardRouteRoute = DashboardRouteRouteImport.update({
   id: '/dashboard',
@@ -46,12 +45,6 @@ const authLoginRoute = authLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => authRouteRoute,
 } as any)
-const authComponentsRegistrationFormRoute =
-  authComponentsRegistrationFormRouteImport.update({
-    id: '/components/RegistrationForm',
-    path: '/components/RegistrationForm',
-    getParentRoute: () => authRouteRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof authRouteRouteWithChildren
@@ -59,14 +52,12 @@ export interface FileRoutesByFullPath {
   '/login': typeof authLoginRoute
   '/register': typeof authRegisterRoute
   '/dashboard/': typeof DashboardIndexRoute
-  '/components/RegistrationForm': typeof authComponentsRegistrationFormRoute
 }
 export interface FileRoutesByTo {
   '/': typeof authRouteRouteWithChildren
   '/login': typeof authLoginRoute
   '/register': typeof authRegisterRoute
   '/dashboard': typeof DashboardIndexRoute
-  '/components/RegistrationForm': typeof authComponentsRegistrationFormRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -76,24 +67,12 @@ export interface FileRoutesById {
   '/(auth)/login': typeof authLoginRoute
   '/(auth)/register': typeof authRegisterRoute
   '/dashboard/': typeof DashboardIndexRoute
-  '/(auth)/components/RegistrationForm': typeof authComponentsRegistrationFormRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/dashboard'
-    | '/login'
-    | '/register'
-    | '/dashboard/'
-    | '/components/RegistrationForm'
+  fullPaths: '/' | '/dashboard' | '/login' | '/register' | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/login'
-    | '/register'
-    | '/dashboard'
-    | '/components/RegistrationForm'
+  to: '/' | '/login' | '/register' | '/dashboard'
   id:
     | '__root__'
     | '/'
@@ -102,7 +81,6 @@ export interface FileRouteTypes {
     | '/(auth)/login'
     | '/(auth)/register'
     | '/dashboard/'
-    | '/(auth)/components/RegistrationForm'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -155,26 +133,17 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authLoginRouteImport
       parentRoute: typeof authRouteRoute
     }
-    '/(auth)/components/RegistrationForm': {
-      id: '/(auth)/components/RegistrationForm'
-      path: '/components/RegistrationForm'
-      fullPath: '/components/RegistrationForm'
-      preLoaderRoute: typeof authComponentsRegistrationFormRouteImport
-      parentRoute: typeof authRouteRoute
-    }
   }
 }
 
 interface authRouteRouteChildren {
   authLoginRoute: typeof authLoginRoute
   authRegisterRoute: typeof authRegisterRoute
-  authComponentsRegistrationFormRoute: typeof authComponentsRegistrationFormRoute
 }
 
 const authRouteRouteChildren: authRouteRouteChildren = {
   authLoginRoute: authLoginRoute,
   authRegisterRoute: authRegisterRoute,
-  authComponentsRegistrationFormRoute: authComponentsRegistrationFormRoute,
 }
 
 const authRouteRouteWithChildren = authRouteRoute._addFileChildren(
